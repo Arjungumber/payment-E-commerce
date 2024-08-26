@@ -1,0 +1,1 @@
+Hi, everyone this repo will help you get some knowledge about full stack, responsive ecommerce website, although the designing part is something you can work on your own as it is subjective depending  on person to person but you can get the crux of how logic building works using MERN
