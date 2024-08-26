@@ -8,17 +8,17 @@ const CategoryList = () => {
 
   const categoryLoading = new Array(13).fill(null);
 
-  const fetchCategoryProduct = async () => {
-    setLoading(true);
-    const response = await fetch(SummaryApi.categoryProduct.url)
-    const dataResponse = await response.json();
-    setLoading(false);
-    setCategoryProduct(dataResponse.data);
-  };
+    const fetchCategoryProduct = async() =>{
+        setLoading(true)
+        const response = await fetch(SummaryApi.categoryProduct.url)
+        const dataResponse = await response.json()
+        setLoading(false)
+        setCategoryProduct(dataResponse.data)
+    }
 
-  useEffect(() => {
-    fetchCategoryProduct();
-  }, []);
+    useEffect(()=>{
+        fetchCategoryProduct()
+    },[])
 
   return (
     // overflow-scroll we've aplied for the small screen
