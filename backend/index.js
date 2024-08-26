@@ -10,7 +10,7 @@ dotenv.config();
 
 // const connectDB = require("./config/db");
 import connectDB from "./config/db.js";
-import router from "./routes/index.js";
+import router from "./routes";
 import cookieParser from "cookie-parser";
 
 const app = express();
