@@ -16,8 +16,8 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-  res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+  res.header('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+  res.header('Access-Control-Allow-Methods','Content-Type','Authorization');
   next();
 });
 
