@@ -14,17 +14,18 @@ function App() {
   const dispatch = useDispatch();
   const [cartProductCount,setCartProductCount] = useState(0);
   
-  const fetchUserDetails = async() =>{
-    const dataResponse = await fetch(SummaryApi.current_user.url, {
-      method: SummaryApi.current_user.method,
-      credentials: "include", // this will help in taking the cookie token and sent to backend
-    });
-    const dataApi = await dataResponse.json();
-    console.log("dataApi",dataApi);
-    if (dataApi.success) {
-      dispatch(setUserDetails(dataApi.data));
-    }
-  };
+   const fetchUserDetails = async()=>{
+      const dataResponse = await fetch(SummaryApi.current_user.url,{
+        method : SummaryApi.current_user.method,
+        credentials : 'include'
+      })
+
+      const dataApi = await dataResponse.json()
+         console.log("Data api",dataApi);
+      if(dataApi.success){
+        dispatch(setUserDetails(dataApi.data))
+      }
+  }
   
   const fetchUserAddToCartCount = async() =>{
  const response = await fetch(SummaryApi.addToCartProductCount.url,{
