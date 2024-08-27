@@ -12,6 +12,10 @@ const Login = () => {
     email:"",
     password:""
   });
+  
+   const navigate = useNavigate();
+  const {fetchUserDetails,fetchUserAddToCartCount} = useContext(Context); // getting that api call here through context provider
+  // also getting the no of products a user has in the cart
   const handleOnChange=(e)=>{
    const {name,value} = e.target;
    setData((preve)=>{
@@ -21,9 +25,8 @@ const Login = () => {
     }
    })
   }
-  const navigate = useNavigate();
-  const {fetchUserDetails,fetchUserAddToCartCount} = useContext(Context); // getting that api call here through context provider
-// also getting the no of products a user has in the cart
+ 
+
   const handleSubmit= async(e)=>{
    e.preventDefault();
    const dataResponse = await fetch(SummaryApi.signIn.url,{
