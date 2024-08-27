@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
-import { SetUserDetails } from "../store/userSlice";
+import { setUserDetails } from "../store/userSlice";
 import { useState } from "react";
 import ROLE from "../common/role";
 import Context from "../context";
@@ -36,7 +36,7 @@ const Header = () => {
     const data = await fetchData.json();
     if (data.success) {
       toast.success(data.message);
-      dispatch(SetUserDetails(null));
+      dispatch(setUserDetails(null));
       navigate("/");
     }
     if (data.error) {
