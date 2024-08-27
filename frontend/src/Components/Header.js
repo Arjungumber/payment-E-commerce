@@ -14,8 +14,8 @@ import Context from "../context";
 
 const Header = () => {
   // coming with the help o redux
-  const user = useSelector((state) => state?.user?.user);
-  // console.log("user header", user);
+  const user = useSelector(state => state?.user?.user);
+   console.log("user header", user);
   const dispatch = useDispatch(); // as we logout we need to clear details from the redux store
   const context = useContext(Context);
   const navigate = useNavigate();
