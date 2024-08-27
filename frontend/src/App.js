@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import SummaryApi from "./common";
 import Context from "./context";
 import { useDispatch } from "react-redux";
-import { SetUserDetails } from "./store/userSlice";
+import { setUserDetails } from "./store/userSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function App() {
     });
     const dataApi = await dataResponse.json();
     if (dataApi.success) {
-      dispatch(SetUserDetails(dataApi.data));
+      dispatch(setUserDetails(dataApi.data));
     }
   };
   
