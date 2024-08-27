@@ -4,7 +4,7 @@ async function userDetailsController(req, res) {
     // this is coming from authToken middleware, where we've decoded the token
             console.log("userId",req.userId)
 
-    const user = await userModel.findById(req?.userId);
+    const user = await userModel.findById(req.userId);
     res.status(200).json({
       data: user,
       error: false,
