@@ -20,6 +20,7 @@ function App() {
       credentials: "include", // this will help in taking the cookie token and sent to backend
     });
     const dataApi = await dataResponse.json();
+    console.log("dataApi",dataApi);
     if (dataApi.success) {
       dispatch(setUserDetails(dataApi.data));
     }
