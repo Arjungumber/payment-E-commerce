@@ -2,6 +2,8 @@ import userModel from "../../models/userModel.js";
 async function userDetailsController(req, res) {
   try {
     // this is coming from authToken middleware, where we've decoded the token
+            console.log("userId",req.userId)
+
     const user = await userModel.findById(req?.userId);
     res.status(200).json({
       data: user,
