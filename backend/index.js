@@ -21,6 +21,7 @@ const app = express();
 //   res.header('Access-Control-Allow-Methods','Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
 //   next();
 // });
+console.log("Allowed Origin:", process.env.FRONTEND_URL);
 
 app.use(
   cors({
