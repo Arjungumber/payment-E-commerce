@@ -14,18 +14,9 @@ import router from "./routes/index.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//    res.header("Access-Control-Allow-Credentials", true);
-//   res.header('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-//   res.header('Access-Control-Allow-Methods','Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-//   next();
-// });
-console.log("Allowed Origin:", process.env.FRONTEND_URL);
-
 app.use(
   cors({
-    origin:[process.env.FRONTEND_URL],
+    origin:["http://localhost:3000",process.env.FRONTEND_URL],
     credentials: true,
   })
 );
